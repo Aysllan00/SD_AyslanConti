@@ -42,12 +42,21 @@ public class NotaCompraService {
 		return notaCompraRepository.findById(id);
 	}
 	
-	public Optional<NotaCompra> buscaCompraPeloIdComListItem(Long id) {
+	public NotaCompra buscaCompraPeloIdComListItem(Long id) {
 		
 		//NotaCompra nota = em.find(NotaCompra.class, id);
 		//nota.getListaNotaCompraItem().size(); //Provoca o proxy
 		//return nota;
-		return notaCompraRepository.findById(id);
+		Optional<NotaCompra> opNotaCompra = notaCompraRepository.findById(id);
+		if(opNotaCompra.isPresent()) {
+			NotaCompra notaCompra = opNotaCompra.get();
+			notaCompra.getListaNotaCompraItem().size();
+			return notaCompra;
+		}
+		else {
+			
+			throw new RuntimeException("Nenhuma nota encontrada!");
+		}
 		
 	}
 	

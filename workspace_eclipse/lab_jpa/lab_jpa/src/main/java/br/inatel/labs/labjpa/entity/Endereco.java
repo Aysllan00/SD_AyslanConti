@@ -3,7 +3,7 @@ package br.inatel.labs.labjpa.entity;
 import java.util.Objects;
 import java.util.UUID;
 
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrePersist;
@@ -39,11 +39,11 @@ public class Endereco {
 		this.codigo = UUID.randomUUID().toString();
 	}
 	
-	public String getId() {
+	public String getCodigo() {
 		return codigo;
 	}
-	public void setId(Long codigo) {
-		codigo = codigo;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 	public String getRua() {
 		return rua;

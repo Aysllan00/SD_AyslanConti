@@ -1,4 +1,4 @@
-package br.inatel.labs.labjpa;
+package br.inatel.labs.labjpa.service;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 

@@ -17,8 +17,8 @@ public class EnderecoTest {
 	public void testarUUIDGeradoPeloJPAListener() {
 		
 		Endereco e = new Endereco();
-		e.setRua("Av. Noqgueira");
-		e.setNumero("510");
+		e.setRua("Av. Nogueira");
+		e.setNumero("511");
 		e.setCidade("Santa Rita");
 		e.setUf("MG");
 		

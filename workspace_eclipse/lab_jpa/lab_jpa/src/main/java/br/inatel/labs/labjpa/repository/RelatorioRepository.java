@@ -7,9 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import br.inatel.labs.labjpa.dto.TotalCompradoPorFornecedorDTO;
+import br.inatel.labs.labjpa.entity.NotaCompraItem;
 
 @Repository
-public interface RelatorioRepository extends JpaRepository<br.inatel.labs.labjpa.entity.NotaCompraItem, Long>{
+public interface RelatorioRepository extends JpaRepository<NotaCompraItem, Long>{
+	
 	@Query(
 	"""
 	select new br.inatel.labs.labjpa.dto.TotalCompradoPorFornecedorDTO
@@ -22,6 +24,6 @@ public interface RelatorioRepository extends JpaRepository<br.inatel.labs.labjpa
 	group by f.razaoSocial
 	""")
 	
-	public List<TotalCompradoPorFornecedorDTO> pesquidarTotalCompradoPorFornecedor();
+	public List<TotalCompradoPorFornecedorDTO> pesquisarTotalCompradoPorFornecedor();
 }
 
